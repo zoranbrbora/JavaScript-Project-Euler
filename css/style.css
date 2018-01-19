@@ -12,7 +12,7 @@ body {
 .assignament-box {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  background-color: #000;
+  background-color: red;
   font-size: 1.3em;
   color: #fff;
   padding: 10%;
