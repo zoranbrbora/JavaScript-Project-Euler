@@ -11,12 +11,18 @@ Find the sum of all the multiples of 3 or 5 below 1000.*/
   let multiplesOfThree = [];
   let multiplesOfFive = [];
 
-  for (let i = 1; i < 300; i++) {
+  for (let i = 1; i < 1000; i++) {
     multiplyThree = 3 * i;
-    multiplyFive = 5 * i;
-    if (multiplyThree <= 1000 && multiplyFive <= 1000) {
-      multiples.push(multiplyThree, multiplyFive);
+    if (multiplyThree <= 1000) {
       multiplesOfThree.push(multiplyThree);
+    } else {
+      break;
+    }
+  }
+
+  for (let i = 1; i < 10000; i++) {
+    multiplyFive = 5 * i;
+    if (multiplyFive <= 1000) {
       multiplesOfFive.push(multiplyFive);
     } else {
       break;
@@ -31,6 +37,9 @@ Find the sum of all the multiples of 3 or 5 below 1000.*/
     return a + b;
   });
 
+  multiples = multiplesOfThree.concat(multiplesOfFive);
+  multiples.sort(function(a, b){return a - b});
+
   multiples = multiples.toString();
   multiples = multiples.replace(/,/g, ' ');
 
@@ -40,4 +49,4 @@ Find the sum of all the multiples of 3 or 5 below 1000.*/
   Sum of multiples of five: ${sumOfFive}.
   <hr />
   All multiples: <br />${multiples}`;
-})();+/
+})();*/
