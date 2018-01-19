@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  padding: 10%;
+}
+
+.assignament-box {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  background-color: #000;
+  font-size: 1.3em;
+  color: #fff;
+  padding: 10%;
+  margin: 0;
+  width: 100%;
+}
+
+.js-result {
+  word-spacing: 0.5em;
+}
