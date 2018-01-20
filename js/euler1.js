@@ -6,36 +6,34 @@ Find the sum of all the multiples of 3 or 5 below 1000.*/
 
 /*(function(){
   let question = 'Find the sum of all the multiples of 3 or 5 below 1000.';
-
   let multiples = [];
   let multiplesOfThree = [];
   let multiplesOfFive = [];
 
-  for (let i = 1; i < 1000; i++) {
-    multiplyThree = 3 * i;
-    if (multiplyThree <= 1000) {
-      multiplesOfThree.push(multiplyThree);
-    } else {
-      break;
+  function makeArrays(multiArray, num) {
+    let multiplyNum;
+    for (let i = 1; i < 350; i++) {
+      multiplyNum = num * i;
+      if (multiplyNum<= 1000) {
+        multiArray.push(multiplyNum);
+      } else {
+        break;
+      }
     }
+    return multiArray;
   }
 
-  for (let i = 1; i < 10000; i++) {
-    multiplyFive = 5 * i;
-    if (multiplyFive <= 1000) {
-      multiplesOfFive.push(multiplyFive);
-    } else {
-      break;
-    }
+  multiplesOfThree = makeArrays(multiplesOfThree, 3);
+  multiplesOfFive = makeArrays(multiplesOfFive, 5);
+
+  function sumOfMultiples(multiArray) {
+    let sumOfMulti = multiArray.reduce((a, b) => {
+      return a + b;
+    });
+    return sumOfMulti;
   }
-
-  let sumOfThree = multiplesOfThree.reduce((a, b) => {
-    return a + b;
-  });
-
-  let sumOfFive = multiplesOfFive.reduce((a, b) => {
-    return a + b;
-  });
+  let sumOfThree = sumOfMultiples(multiplesOfThree);
+  let sumOfFive = sumOfMultiples(multiplesOfFive);
 
   multiples = multiplesOfThree.concat(multiplesOfFive);
   multiples.sort(function(a, b){return a - b});
