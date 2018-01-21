@@ -14,7 +14,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.*/
     let multiplyNum;
     for (let i = 1; i < 350; i++) {
       multiplyNum = num * i;
-      if (multiplyNum<= 1000) {
+      if (multiplyNum < 1000) {
         multiArray.push(multiplyNum);
       } else {
         break;
